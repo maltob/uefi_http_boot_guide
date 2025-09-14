@@ -6,10 +6,10 @@
 
     * IP pool size = At least as large as the number of clients
 
-    * Default router
+    * Default router = Appropriate router such as 192.168.1.1 or 192.168.1.254
 
-    * Mask 
+    * Mask = Correct mask for network such as 255.255.255.0
 
-    * Boot file = http://<SERVERIP>/<BOOTFILEURL>
+    * Boot file = http://SERVERIP/BOOTFILEURL 
 
     * Additional option - 60 = HTTPClient

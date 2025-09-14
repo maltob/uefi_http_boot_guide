@@ -1,7 +1,11 @@
 # uefi_http_boot_guide
 Guide and resources for UEFI level HTTP booting
 
-## Guide Steps:
+## Quick setup info:
+ * Set boot file (Option 67) to the http:// address of the efi binary such as `http://192.168.3.10/boot/boot.efi`
+ * Set the vendor class (Option 60) to `HTTPClient`
+
+## Guide:
 1. Acquire and setup OS you would like to boot
    [Windows Install Media] - TODO
    [FFU] - TODO
@@ -19,3 +23,4 @@ Guide and resources for UEFI level HTTP booting
 1. Additional Resources
    [Troubleshooting with Wireshark] - TODO
    [HTTPs] - TODO
+
