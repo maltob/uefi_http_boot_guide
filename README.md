@@ -9,13 +9,11 @@ Guide and resources for UEFI level HTTP booting
    [Debian] - TODO
    [iPXE] - TODO
 1. Setup web server
-   [NGinx] - TODO
    [Caddy] - TODO
    [Python]
-   [Powershell] - TODO
 1. Configure DHCP server or proxy
    [Generic Setup Assistance]  - TODO
-   [TFTPD64 Setup Guide] - TODO
+   [TFTPD64 Setup Guide](pages/TFTPD64.md)
    [Windows Server Setup Guide] - TODO
 
 1. Additional Resources
