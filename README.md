@@ -31,4 +31,6 @@ Below are quick reference for the boot files, the full guides have more informat
 
    [TFTPD64 Setup Guide](pages/TFTPD64.md)
 
+   [Windows DHCP Setup Guide](pages/dhcp/windows-server.md)
+
 
