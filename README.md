@@ -2,7 +2,7 @@
 Guide and resources for UEFI level HTTP booting
 
 ## Quick setup info:
- * Set boot file (Option 67) to the http:// address of the efi binary such as `http://192.168.3.10/boot/boot.efi`
+ * Set boot file (Option 67) to the http:// address of the efi binary such as `http://192.168.3.10/efi/boot/bootx64.efi`
  * Set the vendor class (Option 60) to `HTTPClient`
 
 
@@ -11,13 +11,14 @@ Below are quick reference for the boot files, the full guides have more informat
 | OS | File |
 | -- | -- |
 | Windows | efi/boot/bootx64.efi |
-| | |
+| Ubuntu and Fedora | efi/boot/bootx64.efi |
 
 # Guide:
 1. Acquire and setup OS you would like to boot
 
    [Windows Install Media](pages/os/windows.md)
 
+   [Ubuntu Install Media](pages/os/ubuntu.md)
 
 1. Setup web server
 
@@ -26,15 +27,8 @@ Below are quick reference for the boot files, the full guides have more informat
    [Python](pages/web/python.md)
 1. Configure DHCP server or proxy
 
-   [Generic Setup Assistance]  - TODO
+   [Generic Setup Assistance](#) - See top of page
 
    [TFTPD64 Setup Guide](pages/TFTPD64.md)
 
-   [Windows Server Setup Guide] - TODO
-
-1. Additional Resources
-
-   [Troubleshooting with Wireshark] - TODO
-
-   [HTTPs] - TODO
 
