@@ -12,7 +12,6 @@ Below are quick reference for the boot files, the full guides have more informat
 | -- | -- |
 | Windows | efi/boot/bootx64.efi |
 | | |
-| | |
 
 # Guide:
 1. Acquire and setup OS you would like to boot
@@ -22,7 +21,7 @@ Below are quick reference for the boot files, the full guides have more informat
 
 1. Setup web server
 
-   [Caddy] - TODO
+   [Caddy](pages/web/caddy.md) - Preferred
 
    [Python](pages/web/python.md)
 1. Configure DHCP server or proxy
