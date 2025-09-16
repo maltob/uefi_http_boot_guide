@@ -13,3 +13,6 @@
     * Boot file = http://SERVERIP/BOOTFILEURL 
 
     * Additional option - 60 = HTTPClient
+
+It should look like the below but with your own values.
+![Screenshot of the TFTPD64 UI](tftpd64/tftpd64.png)
