@@ -62,6 +62,9 @@ The below will need a windows machine. This will allow running the Microsoft mem
 
 
 
+## Booting over Wifi
+Some systems support UEFI boot over Wifi. This just works out of the box with bootmgr.
+
 # Notes - Files bootx64.efi tries to load:
 Right column is whether it was on the ISO I was able to boot from as a reference of what may be needed. The items with a ✅ are needed to boot. The items with a 🔵 exist on the reference ISO but are not required to boot.
 
