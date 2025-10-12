@@ -63,9 +63,31 @@ The below will need a windows machine. This will allow running the Microsoft mem
 
 
 ## Booting over Wifi
-Some systems support UEFI boot over Wifi. This just works out of the box with bootmgr for getting into Windows PE. 
+Some systems support UEFI boot over Wifi. 
 
-You'll need to add Wifi to the boot.wim to enable downloading over wifi.
+You'll need to add Wifi to the boot.wim to enable downloading over wifi. We'll follow [this guide](https://knowledge.broadcom.com/external/article/268140/support-for-wifi-network-adapters-in-win.html) to use the WinRE wim to add wifi. Bootmgr supports using the UEFI network out of the box for networking.
+
+1. Create the wifi profile for your wifi, on a Windows PC you can export this with the below command, switching SSIDHERE with the wireless you want to connect to. It should be WPA2 Personal or Open.
+`netsh wlan export profile SSIDHERE folder=. key=clear` 
+1. Copy over the WinRE.wim from C:\Windows\system32\Recovery\winre.wim to your sources folder in your serve root.
+1. Open terminal as admin and mount the WinRE.wim so we can add the drivers. Below is an example
+```
+cd C:\inetpub\wwwroot\windows\
+mkdir winre
+Mount-WindowsImage -Path winre -ImagePath winre.wim -Index 1
+```
+4. Copy over additional netsh dll's from your system - we'll need dmcmnutils.dll, mdmpostprocessevaluator.dll and mdmregistration.dll.
+
+```
+Copy-Item C:\Windows\system32\dmcmnutils.dll winre\windows\system32\ -Force
+Copy-Item C:\Windows\system32\mdmpostprocessevaluator.dll winre\windows\system32\ -Force
+Copy-Item C:\Windows\system32\mdmregistration.dll winre\windows\system32\ -Force
+```
+5. Delete / overwrite the winre\windows\system32\winpeshl.ini file so it doesn't launch recovery
+6. Add wifi drivers for the needed wifi cards following [Microsofts guide](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-and-remove-drivers-to-an-offline-windows-image?view=windows-11#add-driver-packages-to-an-offline-windows-image)
+7. Unmount the WIM and save
+`Dismount-WindowsImage -Path winre -Save`
+8. Copy it to your serve directory and either add it to the BCD as an additional option or overwrite your previous WIM. Please note this will be larger than the base WIM.
 
 # Notes - Files bootx64.efi tries to load:
 Right column is whether it was on the ISO I was able to boot from as a reference of what may be needed. The items with a ✅ are needed to boot. The items with a 🔵 exist on the reference ISO but are not required to boot.
