@@ -2,7 +2,7 @@
 wpeinit.exe
 net start WlanSvc
 netsh wlan add profile filename=%SystemDrive%\wifi.xml
-netsh wlan connect name=SSIDHERE
+netsh wlan connect name=SSIDHERE ssid=Ssidhere
 
 REM Pause for a few seconds to allow wifi to connect before the first test
 ping 127.0.0.1 -n 6
